@@ -107,10 +107,10 @@ class Maze(tk.Tk):
 
         self.canvas.move(self.rect, base_action[0], base_action[1])  # move agent
 
-        s_ = self.canvas.coords(self.rect)  # next state
+# next state
 
         # reward function
-        if s_ == self.canvas.coords(self.oval):
+        if (s_ := self.canvas.coords(self.rect)) == self.canvas.coords(self.oval):
             reward = 1
             done = True
         elif s_ in [self.canvas.coords(self.hell1), self.canvas.coords(self.hell2)]:
