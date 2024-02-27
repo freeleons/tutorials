@@ -2,7 +2,6 @@
 
 
 # 22 scope (name_scope/variable_scope)
-from __future__ import print_function
 import tensorflow as tf
 
 with tf.name_scope("a_name_scope"):
