@@ -22,13 +22,14 @@ class DeepQNetwork:
             learning_rate=0.01,
             reward_decay=0.9,
             e_greedy=0.9,
-            hidden_layers=[10, 10],
+            hidden_layers=None,
             replace_target_iter=300,
             memory_size=500,
             batch_size=32,
             e_greedy_increment=None,
             output_graph=False,
     ):
+        hidden_layers = [10, 10] if hidden_layers is None else hidden_layers
         self.n_actions = n_actions
         self.n_features = n_features
         self.lr = learning_rate
