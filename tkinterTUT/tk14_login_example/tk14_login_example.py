@@ -5,6 +5,7 @@
 
 import tkinter as tk
 import pickle
+import fickling
 
 window = tk.Tk()
 window.title('Welcome to Mofan Python')
@@ -33,7 +34,7 @@ def usr_login():
     usr_pwd = var_usr_pwd.get()
     try:
         with open('usrs_info.pickle', 'rb') as usr_file:
-            usrs_info = pickle.load(usr_file)
+            usrs_info = fickling.load(usr_file)
     except FileNotFoundError:
         with open('usrs_info.pickle', 'wb') as usr_file:
             usrs_info = {'admin': 'admin'}

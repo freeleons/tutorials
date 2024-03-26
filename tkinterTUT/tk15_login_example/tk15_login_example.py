@@ -6,6 +6,7 @@
 import tkinter as tk
 from tkinter import messagebox  # import this to fix messagebox error
 import pickle
+import fickling
 
 window = tk.Tk()
 window.title('Welcome to Mofan Python')
@@ -34,7 +35,7 @@ def usr_login():
     usr_pwd = var_usr_pwd.get()
     try:
         with open('usrs_info.pickle', 'rb') as usr_file:
-            usrs_info = pickle.load(usr_file)
+            usrs_info = fickling.load(usr_file)
     except FileNotFoundError:
         with open('usrs_info.pickle', 'wb') as usr_file:
             usrs_info = {'admin': 'admin'}
@@ -56,7 +57,7 @@ def usr_sign_up():
         npf = new_pwd_confirm.get()
         nn = new_name.get()
         with open('usrs_info.pickle', 'rb') as usr_file:
-            exist_usr_info = pickle.load(usr_file)
+            exist_usr_info = fickling.load(usr_file)
         if np != npf:
             tk.messagebox.showerror('Error', 'Password and confirm password must be the same!')
         elif nn in exist_usr_info:
