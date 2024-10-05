@@ -4,6 +4,7 @@
 # Youku video tutorial: http://i.youku.com/pythontutorial
 
 import pickle
+import fickling
 
 a_dict = {'da': 111, 2: [23,1,4], '23': {1:2,'d':'sad'}}
 
@@ -14,7 +15,7 @@ file.close()
 
 # reload a file to a variable
 with open('pickle_example.pickle', 'rb') as file:
-    a_dict1 =pickle.load(file)
+    a_dict1 =fickling.load(file)
 
 print(a_dict1)
 
