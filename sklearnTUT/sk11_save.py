@@ -9,6 +9,7 @@ Please note, this code is only for python 3+. If you are using python 2+, please
 from __future__ import print_function
 from sklearn import svm
 from sklearn import datasets
+import fickling
 
 clf = svm.SVC()
 iris = datasets.load_iris()
@@ -22,7 +23,7 @@ with open('save/clf.pickle', 'wb') as f:
     pickle.dump(clf, f)
 # restore
 with open('save/clf.pickle', 'rb') as f:
-   clf2 = pickle.load(f)
+   clf2 = fickling.load(f)
    print(clf2.predict(X[0:1]))
 
 # method 2: joblib

@@ -12,6 +12,7 @@ import numpy as np
 import theano
 import theano.tensor as T
 import pickle
+import fickling
 
 def compute_accuracy(y_target, y_predict):
     correct_prediction = np.equal(y_predict, y_target)
@@ -64,7 +65,7 @@ with open('save/model.pickle', 'wb') as file:
 
 # load model
 with open('save/model.pickle', 'rb') as file:
-    model = pickle.load(file)
+    model = fickling.load(file)
     w.set_value(model[0])
     b.set_value(model[1])
     print(w.get_value()[:10])
